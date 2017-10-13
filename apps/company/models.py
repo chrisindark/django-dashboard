@@ -26,3 +26,14 @@ class Subscription(models.Model):
             self.signup_date = timezone.now()
         self.renewal_date = timezone.now() + timezone.timedelta(days=1)
         return super().save(*args, **kwargs)
+
+
+class Contact(models.Model):
+    contact_name = models.CharField(max_length=50)
+    title = models.CharField(max_length=20)
+    work_phone = models.CharField(max_length=20)
+    fax = models.CharField(max_length=20, blank=True)
+    mobile_phone = models.CharField(max_length=20, blank=True)
+    email = models.EmailField(max_length=255)
+    referral_option = models.CharField(max_length=30)
+    subscribe_to_notices = models.BooleanField(default=True)

@@ -42,3 +42,14 @@ class SubscriptionForm(forms.ModelForm):
 
     def clean(self):
         return super().clean()
+
+
+class ContactForm(forms.ModelForm):
+    REFERRAL_CHOICES = (
+        ('personal_referral', 'Personal Referral'),
+    )
+
+    referral_option = forms.ChoiceField(choices=REFERRAL_CHOICES)
+
+    def clean(self):
+        return super().clean()
