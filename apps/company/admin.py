@@ -13,13 +13,17 @@ class CompanyAdmin(admin.ModelAdmin):
 
 
 class SubscriptionAdmin(admin.ModelAdmin):
-    list_display = ('trial', 'trial_length', 'signup_date', 'renewal_date',
-                    'price_per_sq_feet', 'module')
+    list_display = (
+        'trial', 'trial_length', 'signup_date', 'renewal_date',
+        'price_per_sq_feet', 'module'
+    )
     form = SubscriptionForm
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = (
+        'contact_name', 'title', 'email', 'referral_option'
+    )
     form = ContactForm
 
 # Register your models here.
