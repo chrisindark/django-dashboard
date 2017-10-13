@@ -38,6 +38,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -105,3 +107,10 @@ MEDIA_PATH = 'media/'
 
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, STATIC_PATH))
 MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, MEDIA_PATH))
+
+STATICFILES_DIRS = []
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
